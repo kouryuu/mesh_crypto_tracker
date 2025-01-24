@@ -1,68 +1,94 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --text-light: #4A4A4A;
+  --text-dark: #1A1A1A;
+  --background-color: rgb(234, 232, 225);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-dark);
   line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+h1, h2 {
+  font-family: 'Lustria', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
-body {
+h3, h4, h5, h6 {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 4rem;
+  color: var(--text-dark);
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--text-light);
+}
+
+h3 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  letter-spacing: 0.02em;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+p {
+  margin: 1rem 0;
+  color: var(--text-light);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
   }
-  a:hover {
-    color: #747bff;
+
+  h2 {
+    font-size: 2rem;
   }
-  button {
-    background-color: #f9f9f9;
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
   }
 }
