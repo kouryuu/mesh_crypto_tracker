@@ -11,7 +11,7 @@ import {
 } from './store/atoms'
 import Loader from './components/Loader'
 import { formatGraphData, formatLabels } from './services/bitsoApi'
-
+import styled from 'styled-components'
 
 function ChartContent() {
   const [selectedCrypto] = useAtom(selectedCryptoAtom)
@@ -30,14 +30,23 @@ function ChartContent() {
     />
   )
 }
-
+const StyledChartContainer = styled.div`
+  width: 100%;
+  height: 50vh;
+  max-height: 500px;
+  position: relative;
+  margin: 20px 0;
+`;
 export default function App() {
   return (
     <>
       <Controls />
+      <StyledChartContainer>
       <Suspense fallback={<Loader />}>
         <ChartContent />
       </Suspense>
+      </StyledChartContainer>
+      <small>Price data taken from <a href="https://bitso.com/">Bitso </a> </small>
     </>
   )
 }
