@@ -1,12 +1,11 @@
 // src/components/Controls.tsx
-import { useAtom, useSetAtom } from 'jotai'
+import { useAtom } from 'jotai'
 import Dropdown from './Dropdown'
 import { CRYPTO_OPTIONS } from '../fixtures/cryptocurrencies'
 import { 
   selectedCryptoAtom, 
   currencyAtom, 
-  periodAtom,
-  fetchCryptoDataAtom 
+  periodAtom
 } from '../store/atoms'
 import type { Period, PreferredCurrency } from '../services/bitsoApi'
 import styled from 'styled-components'
@@ -36,21 +35,17 @@ export default function Controls() {
   const [selectedCrypto, setSelectedCrypto] = useAtom(selectedCryptoAtom)
   const [selectedCurrency, setSelectedCurrency] = useAtom(currencyAtom)
   const [selectedPeriod, setSelectedPeriod] = useAtom(periodAtom)
-  const fetchCryptoData = useSetAtom(fetchCryptoDataAtom)
 
   const handleCryptoChange = async (value: string) => {
     setSelectedCrypto(value)
-    await fetchCryptoData(value)
   }
 
   const handleCurrencyChange = async (value: string) => {
     setSelectedCurrency(value as PreferredCurrency)
-    await fetchCryptoData(selectedCrypto)
   }
 
   const handlePeriodChange = async (value: string) => {
     setSelectedPeriod(value as Period)
-    await fetchCryptoData(selectedCrypto)
   }
 
   return (
