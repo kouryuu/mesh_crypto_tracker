@@ -35,11 +35,13 @@ export const fetchCurrencyGraph = async (
 
 // Helper functions that format data.
 export const formatGraphData = (data: BitsoGraphResponse) => {
+  if (data == null) return;
   return data?.payload?.graph_data?.points?.map(point => {
         return parseFloat(point.number)
     });
 };
 export const formatLabels = (data: BitsoGraphResponse) => {
+    if (data == null) return;
     return data?.payload?.graph_data?.points?.map(point => {
           return new Date(point.date).toISOString();
       });
