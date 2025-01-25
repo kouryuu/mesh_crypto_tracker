@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@types/react-select": "^5.0.1",
+    "@types/styled-components": "^5.1.34",
     "chartjs-adapter-date-fns": "^3.0.0",
     "date-fns": "^4.1.0",
     "jotai": "^2.11.1",
+    "jotai-cache": "^0.5.0",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^18.3.1",
