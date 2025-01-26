@@ -10,6 +10,7 @@ import {
 import type { Period, PreferredCurrency } from '../services/bitsoApi'
 import styled from 'styled-components'
 
+
 const PERIOD_OPTIONS = [
   { value: '1W', label: '1 Week' },
   { value: '1M', label: '1 Month' },
@@ -31,6 +32,13 @@ const CURRENCY_OPTIONS = [
 const CryptoSelector = styled(Dropdown)`
     min-width: 30vw;
 `;
+const ControlsContainer = styled.div`
+    display: grid;
+    width: 100%;
+    grid-template-columns: 3fr 2fr 1fr;
+    gap: 1em;
+    
+`
 export default function Controls() {
   const [selectedCrypto, setSelectedCrypto] = useAtom(selectedCryptoAtom)
   const [selectedCurrency, setSelectedCurrency] = useAtom(currencyAtom)
@@ -49,7 +57,7 @@ export default function Controls() {
   }
 
   return (
-    <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+    <ControlsContainer>
       <CryptoSelector
         options={CRYPTO_OPTIONS}
         value={selectedCrypto}
@@ -68,6 +76,6 @@ export default function Controls() {
         onChange={handlePeriodChange}
         placeholder="Select a period"
       />
-    </div>
+    </ControlsContainer>
   )
 }

@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { useAtom, useAtomValue} from 'jotai'
-import './App.css'
+import './index.css'
 import Controls from './components/Controls'
 import LineChart from './components/LineChart'
 import { 
@@ -37,9 +37,17 @@ const StyledChartContainer = styled.div`
   position: relative;
   margin: 20px 0;
 `;
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+`
 export default function App() {
   return (
-    <>
+    <Container>
       <Controls />
       <StyledChartContainer>
       <Suspense fallback={<Loader />}>
@@ -47,6 +55,6 @@ export default function App() {
       </Suspense>
       </StyledChartContainer>
       <small>Price data taken from <a href="https://bitso.com/">Bitso </a> </small>
-    </>
+    </Container>
   )
 }
